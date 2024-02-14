@@ -7,7 +7,6 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -17,7 +16,7 @@
         <CalendarView
             android:id="@+id/calendar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -29,22 +28,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_centerInParent="true"
-                android:gravity="center"
-                android:text="@string/date" />
-
+                android:text="@string/date"
+                android:gravity="center" />
             <Button
                 android:id="@+id/addButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:text="@string/addButton" />
+                android:text="@string/addButton"/>
+
         </RelativeLayout>
-
-        <TextView
-            android:id="@+id/memo"
-            android:layout_width="match_parent"
-            android:layout_height="340dp"
-            android:text="일정을 입력해주세요!"/>
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
