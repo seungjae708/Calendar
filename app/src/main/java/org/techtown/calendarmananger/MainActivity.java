@@ -13,6 +13,7 @@ import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -20,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
     Button addButton;
     CalendarView calendar;
     TextView click_date;
+
     TextView memo;
+    ArrayList<String> memoList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         calendar = findViewById(R.id.calendar);
         click_date = findViewById(R.id.click_date);
         memo = findViewById(R.id.memo);
+        memoList = new ArrayList<>(); // ArrayList 초기화
 
 
         addButton.setOnClickListener(new View.OnClickListener(){
@@ -47,9 +51,8 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
                         String result = et.getText().toString();
-                        if (memo != null) {  // null 체크 추가
-                            memo.setText(result);
-                        }
+                        memoList.add(result); // 새로운 메모를 ArrayList에 추가
+                        updateMemo(); // 메모를 업데이트
                         dialogInterface.dismiss();
                     }
                 });
@@ -71,5 +74,13 @@ public class MainActivity extends AppCompatActivity {
                 click_date.setText(year + "년 "+ (month + 1) +"월 "+day+"일");
             }
         }); // calendar 클릭 이벤트
+    }
+    // 메모를 업데이트하는 메서드
+    private void updateMemo() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (String memoItem : memoList) {
+            stringBuilder.append(memoItem).append("\n"); // 각 메모를 줄바꿈과 함께 추가
+        }
+        memo.setText(stringBuilder.toString());
     }
 }
