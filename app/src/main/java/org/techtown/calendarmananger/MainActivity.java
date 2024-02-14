@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
         memo = findViewById(R.id.memo);
         memoList = new ArrayList<>(); // ArrayList 초기화
 
-
         addButton.setOnClickListener(new View.OnClickListener(){
 
+            // 팝업 버튼
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder ad = new AlertDialog.Builder(MainActivity.this);
@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 final EditText et = new EditText(MainActivity.this);
                 ad.setView(et);
 
+                // 팝업 저장 버튼
                 ad.setPositiveButton("저장", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
+                // 팝업 취소 버튼
                 ad.setNegativeButton("취소", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
