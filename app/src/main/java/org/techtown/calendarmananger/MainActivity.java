@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         click_date = findViewById(R.id.click_date);
         memo = findViewById(R.id.memo);
 
+
         addButton.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -46,7 +47,9 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
                         String result = et.getText().toString();
-                        memo.setText(result);
+                        if (memo != null) {  // null 체크 추가
+                            memo.setText(result);
+                        }
                         dialogInterface.dismiss();
                     }
                 });

@@ -27,7 +27,7 @@
             <TextView
                 android:id="@+id/click_date"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:gravity="center"
                 android:text="@string/date" />
@@ -40,11 +40,29 @@
                 android:text="@string/addButton" />
         </RelativeLayout>
 
-        <TextView
-            android:id="@+id/memo"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="340dp"
-            android:text="일정을 입력해주세요!"/>
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <!-- 추가 내용을 스크롤할 부분 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!-- 스크롤 가능한 추가 TextView -->
+                <TextView
+                    android:id="@+id/memo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="스크롤 가능한 텍스트 뷰"
+                    android:textSize="18sp" />
+
+
+                <!-- 추가로 필요한 뷰들을 여기에 추가 -->
+            </LinearLayout>
+        </ScrollView>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

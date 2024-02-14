@@ -2,5 +2,5 @@
     <string name="app_name">Calendar Mananger</string>
 
     <string name="date"> 날짜 입력</string>
-    <string name="addButton"> 추가</string>
+    <string name="addButton">추가</string>
 </resources>
