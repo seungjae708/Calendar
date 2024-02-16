@@ -55,9 +55,9 @@
                     android:id="@+id/memo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp" />
-
-
+                    android:textSize="18sp"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"/>
                 <!-- 추가로 필요한 뷰들을 여기에 추가 -->
             </LinearLayout>
         </ScrollView>
