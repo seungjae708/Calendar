@@ -55,7 +55,6 @@
                     android:id="@+id/memo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="스크롤 가능한 텍스트 뷰"
                     android:textSize="18sp" />
 
 
